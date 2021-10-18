@@ -1,5 +1,7 @@
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.util.Arrays;
+
 import org.junit.jupiter.api.Test;
 
 class ArraysTests {
@@ -84,6 +86,10 @@ class ArraysTests {
 	@Test
 	void arraysCopyOfRange() {
 		//TODO write tests for Arrays.copyOfRange functionality according to the doc
+		int ar[] = {0, -34, 99, 156, 999, 23, 54, 77};
+		int expected[] = {99, 156, 999, 23};
+		int actual[] = Arrays.copyOfRange(ar, 2, 6);
+		assertArrayEquals(expected, actual);
 	}
 	
 
