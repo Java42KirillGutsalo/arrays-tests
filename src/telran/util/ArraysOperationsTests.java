@@ -49,7 +49,12 @@ class ArraysOperationsTests {
 
 	@Test
 	void testAddLast() {
-		fail("Not yet implemented");
+		int elementAddLast = 1;
+		Integer numbers[] = {1, 2, 3};
+		Integer actualNumbers[] = new Integer[numbers.length + 1];
+		Integer expected[] = {1, 2, 3, 1};
+		addLast(numbers, elementAddLast, actualNumbers );
+		assertArrayEquals(expected, actualNumbers);
 	}
 
 	@Test
