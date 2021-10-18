@@ -1,5 +1,7 @@
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.util.Arrays;
+
 import org.junit.jupiter.api.Test;
 
 class ArraysTests {
@@ -90,6 +92,11 @@ class ArraysTests {
 	@Test
 	void arraysBinarySearch() {
 		//TODO write tests for Arrays.binarySearch functionality according to the doc
+		int ar[] = {10, 20, 30, 40, 50, 60, 70};
+		int expected = Arrays.binarySearch(ar, 40);
+		assertEquals(3, expected);
+		int expected1 = Arrays.binarySearch(ar, 33);
+		assertEquals(-4, expected1);
 	}
 
 }
