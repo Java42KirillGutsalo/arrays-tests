@@ -73,6 +73,8 @@ class ArraysOperationsTests {
 		Integer expected[] = {1, 2, 3, 1};
 		addLast(numbers, elementAddLast, actualNumbers );
 		assertArrayEquals(expected, actualNumbers);
+		actualNumbers = new Integer[1];
+		assertEquals(WRONG_RESULT_LENGTH, addLast(numbers, elementAddLast, actualNumbers));
 	}
 
 	@Test
@@ -81,8 +83,10 @@ class ArraysOperationsTests {
 		Integer numbers[] = {1, 2, 3};
 		Integer actualNumbers[] = new Integer[numbers.length + 1];
 		Integer expected[] = {-5, 1, 2, 3};
-		addFirst(numbers, elementAddFirst, actualNumbers );
+		addFirst(numbers, elementAddFirst, actualNumbers);
 		assertArrayEquals(expected, actualNumbers);
+		actualNumbers = new Integer[1];
+		assertEquals(WRONG_RESULT_LENGTH, addFirst(numbers, elementAddFirst, actualNumbers));
 	}
 
 }
