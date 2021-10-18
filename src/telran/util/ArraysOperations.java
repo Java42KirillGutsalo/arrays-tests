@@ -48,7 +48,13 @@ public static <T> String insertSorted (T[] sortedArray, T element, T[] res) {
 }
 public static <T> String addLast(T[] array, T element, T[]res) {
 	//TODO adds a given element at end  of the result array
-	return "";
+	if (res.length != array.length + 1) {
+		return WRONG_RESULT_LENGTH;
+	}
+	System.arraycopy(array, 0, res, 0, array.length);
+	res[array.length] = element;
+	System.arraycopy(array, array.length, res, array.length + 1, 0);
+	return OK;
 }
 public static <T> String addFirst(T[] array, T element, T[]res) {
 	//TODO adds a given element at beginning  of the result array
