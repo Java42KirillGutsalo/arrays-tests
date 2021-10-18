@@ -39,7 +39,25 @@ class ArraysOperationsTests {
 
 	@Test
 	void testRemove() {
-		fail("Not yet implemented");
+		String arStr[] = {"hello", INSERTED_STRING, "Java"}; 
+		String expectedStr[] = {"hello", "Java"}; 
+		String actualStr[] = new String[arStr.length - 1];
+		int indexRemove = 1;
+		assertEquals(OK,remove(arStr, indexRemove, actualStr));
+		assertArrayEquals(expectedStr, actualStr);
+		assertEquals(WRONG_INDEX,remove(arStr, 100, actualStr));
+		actualStr = new String[1];
+		assertEquals(WRONG_RESULT_LENGTH,remove(arStr, indexRemove, actualStr));
+		Integer numbers[] = {1, 2, 3};
+		indexRemove = 0;
+		Integer actualNumbers[] = new Integer[numbers.length - 1];
+		Integer expectedFirst[] = {2, 3};
+		remove(numbers, indexRemove, actualNumbers);
+		assertArrayEquals(expectedFirst, actualNumbers);
+		indexRemove = numbers.length - 1;
+		Integer expectedLast[] = {1, 2};
+		remove(numbers, indexRemove, actualNumbers );
+		assertArrayEquals(expectedLast, actualNumbers);
 	}
 
 	@Test

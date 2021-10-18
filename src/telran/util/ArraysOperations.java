@@ -5,6 +5,8 @@ package telran.util;
 import java.util.Arrays;
 import java.util.Comparator;
 
+import javax.lang.model.element.Element;
+
 public class ArraysOperations {
 	public static final String OK = "ok";
 	public static final String WRONG_INDEX = "wrong-index";
@@ -25,7 +27,16 @@ public static  <T> String insert(T[] array, T element, int index, T[] res) {
 }
 public static <T> String remove(T[] array, int index, T[] res) {
 	//TODO removes any object at the given index
-	return "";
+	if (index < 0 || index > array.length) {
+		return WRONG_INDEX;
+	}
+	if (res.length != array.length - 1) {
+		return WRONG_RESULT_LENGTH;
+	}
+	System.arraycopy(array, 0, res, 0, index);
+	
+	System.arraycopy(array, index + 1, res, index, res.length - index);
+	return OK;
 }
 public static <T> String insertSorted (T[] sortedArray, T element, T[] res) {
 	//TODO inserts a given any element at index to keep array sorted
