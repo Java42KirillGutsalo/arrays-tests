@@ -66,6 +66,8 @@ class ArraysTests {
 		int actual[] = new int[4];
 		int expected[] = {1, 2, 4, 5};
 		//TODO make sure the following assert will pass using System.arraycopy
+		System.arraycopy(ar, 0, actual, 0, 2);
+		System.arraycopy(ar, 3, actual, 2, 2);
 		assertArrayEquals(expected, actual);
 	}
 	@Test
