@@ -77,7 +77,12 @@ class ArraysOperationsTests {
 
 	@Test
 	void testAddFirst() {
-		fail("Not yet implemented");
+		int elementAddFirst = -5;
+		Integer numbers[] = {1, 2, 3};
+		Integer actualNumbers[] = new Integer[numbers.length + 1];
+		Integer expected[] = {-5, 1, 2, 3};
+		addFirst(numbers, elementAddFirst, actualNumbers );
+		assertArrayEquals(expected, actualNumbers);
 	}
 
 }
