@@ -1,5 +1,7 @@
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.util.Arrays;
+
 import org.junit.jupiter.api.Test;
 
 class ArraysTests {
@@ -84,6 +86,10 @@ class ArraysTests {
 	@Test
 	void arraysCopyOf() {
 		//TODO write tests for Arrays.copyOf functionality according to the doc
+		int ar[] = {1, 2, 3, 4, 5, 6, 7};
+		int expected[] = {1, 2, 3, 4};
+		int actual[] = Arrays.copyOf(ar, 4);
+		assertArrayEquals(expected, actual);
 	
 	}
 	@Test
