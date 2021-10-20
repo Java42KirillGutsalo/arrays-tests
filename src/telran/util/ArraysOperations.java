@@ -31,8 +31,10 @@ public static <T> String insertSorted (T[] sortedArray, T element, T[] res) {
 	//TODO inserts a given any element at index to keep array sorted
 	//below is the example of binarySearch call
 	//How to use a result of that call - is your challenge
-	Arrays.binarySearch(sortedArray, element, (Comparator<T>)Comparator.naturalOrder());
-	return "";
+	int index = Arrays.binarySearch(sortedArray, element, (Comparator<T>)Comparator.naturalOrder());
+	if (index < 0)
+		index = -(index + 1);
+	return insert(sortedArray, element, index, res);
 	
 }
 public static <T> String addLast(T[] array, T element, T[]res) {
