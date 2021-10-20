@@ -62,7 +62,12 @@ class ArraysOperationsTests {
 
 	@Test
 	void testInsertSorted() {
-		fail("Not yet implemented");
+		Integer numbers[] = {1, 2, 3, 5};
+		Integer num = 4;
+		Integer expectedNum[] = {1, 2, 3, 4, 5};
+		Integer actualNum[] = new Integer[numbers.length + 1];
+		assertEquals(OK, insertSorted(numbers, num, actualNum));
+		assertArrayEquals(expectedNum, actualNum);
 	}
 
 	@Test
