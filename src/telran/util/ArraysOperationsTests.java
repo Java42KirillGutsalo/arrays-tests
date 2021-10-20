@@ -48,14 +48,14 @@ class ArraysOperationsTests {
 		assertEquals(WRONG_INDEX,remove(arStr, 100, actualStr));
 		actualStr = new String[1];
 		assertEquals(WRONG_RESULT_LENGTH,remove(arStr, indexRemove, actualStr));
-		Integer numbers[] = {1, 2, 3};
+		Integer numbers[] = {1, 2, 3, 4, 5};
 		indexRemove = 0;
 		Integer actualNumbers[] = new Integer[numbers.length - 1];
-		Integer expectedFirst[] = {2, 3};
+		Integer expectedFirst[] = {2, 3, 4, 5};
 		remove(numbers, indexRemove, actualNumbers);
 		assertArrayEquals(expectedFirst, actualNumbers);
 		indexRemove = numbers.length - 1;
-		Integer expectedLast[] = {1, 2};
+		Integer expectedLast[] = {1, 2, 3, 4};
 		remove(numbers, indexRemove, actualNumbers );
 		assertArrayEquals(expectedLast, actualNumbers);
 	}
@@ -68,6 +68,8 @@ class ArraysOperationsTests {
 		Integer actualNum[] = new Integer[numbers.length + 1];
 		assertEquals(OK, insertSorted(numbers, num, actualNum));
 		assertArrayEquals(expectedNum, actualNum);
+		actualNum = new Integer[numbers.length];
+		assertEquals(WRONG_RESULT_LENGTH, insertSorted(numbers, num, actualNum));
 	}
 
 	@Test
