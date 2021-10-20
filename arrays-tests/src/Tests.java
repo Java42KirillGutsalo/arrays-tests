@@ -90,6 +90,8 @@ class ArraysTests {
 		int expected[] = {1, 2, 3, 4};
 		int actual[] = Arrays.copyOf(ar, 4);
 		assertArrayEquals(expected, actual);
+		// V.R. The case with amount of copied elements greater then the length
+		// of source array isn't tested
 	
 	}
 	@Test
@@ -99,6 +101,8 @@ class ArraysTests {
 		int expected[] = {99, 156, 999, 23};
 		int actual[] = Arrays.copyOfRange(ar, 2, 6);
 		assertArrayEquals(expected, actual);
+		// V.R. The case with final index greater then the length
+		// of source array isn't tested
 	}
 	
 
